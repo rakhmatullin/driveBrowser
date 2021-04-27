@@ -17,7 +17,6 @@
 		D22025292636E21000661DE3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22025272636E21000661DE3 /* Utils.swift */; };
 		D220252A2636E21000661DE3 /* DriveApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22025282636E21000661DE3 /* DriveApi.swift */; };
 		D220254B26371C5000661DE3 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D220254A26371C5000661DE3 /* FirstPageViewController.swift */; };
-		D2202554263729D500661DE3 /* ObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2202553263729D500661DE3 /* ObserverViewController.swift */; };
 		D220255726372D4800661DE3 /* ObserverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D220255626372D4800661DE3 /* ObserverView.swift */; };
 		D26210D326373C1C007414DB /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26210D226373C1C007414DB /* FileCell.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		D22025272636E21000661DE3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D22025282636E21000661DE3 /* DriveApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveApi.swift; sourceTree = "<group>"; };
 		D220254A26371C5000661DE3 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
-		D2202553263729D500661DE3 /* ObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverViewController.swift; sourceTree = "<group>"; };
 		D220255626372D4800661DE3 /* ObserverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverView.swift; sourceTree = "<group>"; };
 		D26210D226373C1C007414DB /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +93,6 @@
 				D22025202636E20200661DE3 /* Views */,
 				D220254A26371C5000661DE3 /* FirstPageViewController.swift */,
 				D22025022636DDA300661DE3 /* DriveBrowserViewController.swift */,
-				D2202553263729D500661DE3 /* ObserverViewController.swift */,
 				D22025042636DDA300661DE3 /* Main.storyboard */,
 				D220251D2636DF6400661DE3 /* Support files */,
 				D220250C2636DDA600661DE3 /* Info.plist */,
@@ -262,7 +259,6 @@
 				D220255726372D4800661DE3 /* ObserverView.swift in Sources */,
 				D22025012636DDA300661DE3 /* SceneDelegate.swift in Sources */,
 				D220254B26371C5000661DE3 /* FirstPageViewController.swift in Sources */,
-				D2202554263729D500661DE3 /* ObserverViewController.swift in Sources */,
 				D22025292636E21000661DE3 /* Utils.swift in Sources */,
 				D26210D326373C1C007414DB /* FileCell.swift in Sources */,
 				D220252A2636E21000661DE3 /* DriveApi.swift in Sources */,
