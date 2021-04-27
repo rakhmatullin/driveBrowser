@@ -8,20 +8,10 @@
 import UIKit
 import GoogleAPIClientForREST
 
-protocol DriveBrowserViewDelegate {
-    func onPressBack()
-    func onPressSignOut()
-    func onPressPrevDir()
-    func onPressFile(file: GTLRDrive_File)
-    func onPressMyDrive()
-    func onPressShared()
-}
-
 class ObserverView: UIView {
     var delegate: DriveBrowserViewDelegate?
     var tableView: UITableView!
-    var loadingView: UIActivityIndicatorView!
-    var inRoot = true // Use to check if in the root path of Google Drive
+    let refreshControl = UIRefreshControl()
     var items = [GTLRDrive_File]() {
         didSet {
             items = items.sorted(by: DriveApi.sortFiles)
@@ -47,38 +37,28 @@ class ObserverView: UIView {
         self.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(FileCell.self, forCellReuseIdentifier: "MyCell")
+        tableView.register(FileCell.self, forCellReuseIdentifier: FileCell.identifier)
         
         tableView.pin(to: self)
         tableView.rowHeight = 60
-        //tableView.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         
-        
-    }
-    
-    public func reloadTableView(_ files: [GTLRDrive_File], inRoot: Bool = true) {
-        items = files
-        self.inRoot = inRoot
-        tableView.reloadData()
-        //let cells = tableView.visibleCells
-        /*for cell in cells {
-            cell.alpha = 0
-        }
-        for cell in cells {
-            UIView.animate(withDuration: 0.5) {
-                cell.alpha = 1
-            }
-        }*/
-    }
-    
-    public func setLoading(_ loading: Bool) {
-        if loading {
-            //loadingView.startAnimating()
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
         } else {
-            //loadingView.stopAnimating()
+            tableView.addSubview(refreshControl)
         }
+        refreshControl.addTarget(self, action: #selector(updateTableViewContent), for: .valueChanged)
     }
-
+    
+    @objc private func updateTableViewContent() {
+        delegate?.needReload()
+        refreshControl.endRefreshing()
+    }
+    
+    public func reloadTableView(_ files: [GTLRDrive_File]) {
+        items = files
+        tableView.reloadData()
+    }
 }
 
 
@@ -88,7 +68,7 @@ extension ObserverView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as! FileCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: FileCell.identifier) as! FileCell
         cell.setData(data: items[indexPath.row])
         return cell
     }

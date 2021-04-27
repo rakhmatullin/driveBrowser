@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DriveBrowserViewController.swift
 //  driveBrowser
 //
 //  Created by Ренат Рахматуллин on 26.04.2021.
@@ -9,19 +9,16 @@ import UIKit
 import GoogleSignIn
 import GoogleAPIClientForREST
 
-protocol FirstPageViewControllerDelegate {
-    func pickedFile(file: GTLRDrive_File)
+protocol DriveBrowserViewDelegate {
+    func onPressFile(file: GTLRDrive_File)
+    func needReload()
 }
 
 class DriveBrowserViewController: UIViewController {
-    
     var delegate: FirstPageViewControllerDelegate?
     var service: GTLRDriveService!
     var drive: DriveApi?
     var mainView: ObserverView!
-    var onFinish: ((_ data: [String: Any]?, _ error: String?) -> Void)?
-    var mimeTypes = [String]()
-    var didOpenSignIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +26,10 @@ class DriveBrowserViewController: UIViewController {
         mainView = ObserverView(frame: self.view.frame)
         mainView.delegate = self
         view.addSubview(mainView)
+        
+        let mask = UIImage()
+        navigationController?.navigationBar.backIndicatorImage = mask
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = mask
     }
     
     
@@ -68,9 +69,6 @@ class DriveBrowserViewController: UIViewController {
     
     fileprivate func loadData() {
         drive = DriveApi(service)
-        for type in mimeTypes {
-            drive?.mimeTypes.append(contentsOf: Utils.convertFileTypeToMimeType(type))
-        }
         
         drive?.listFilesInMyDrive(onCompleted: { (list, error) in
             if let error = error {
@@ -78,7 +76,7 @@ class DriveBrowserViewController: UIViewController {
                 return
             }
             if let list = list {
-                self.mainView.reloadTableView(list, inRoot: true)
+                self.mainView.reloadTableView(list)
             }
         })
     }
@@ -86,29 +84,14 @@ class DriveBrowserViewController: UIViewController {
 }
 
 extension DriveBrowserViewController: DriveBrowserViewDelegate {
-    
     func onPressFile(file: GTLRDrive_File) {
         if file.isFolder() {
-            /*guard let id = file.identifier else { return }
-            currentPath.append(id)
-            loadData()*/
             return
         }
-        guard let id = file.identifier, let name = file.name, let size = file.size as? Int else {
-            //self.onFinish?(nil, "Failed to choose file from Google Drive")
-            //self.dismiss(animated: true, completion: nil)
-            return
-        }
-        /*let dictionary = [
-            "id": id,
-            "name": name,
-            "size": size,
-            "mimeType": "application/pdf",
-            "service": "google",
-            "remoteEmail": service.authorizer?.userEmail ?? ""
-            ] as [String : Any]*/
-        //onFinish?(dictionary, nil)
         delegate?.pickedFile(file: file)
     }
     
+    func needReload() {
+        loadData()
+    }
 }

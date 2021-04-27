@@ -1,11 +1,3 @@
-//
-//  GoogleDrive.swift
-//  GoogleDriveSwift
-//
-//  Created by Loc Nguyen on 11/5/19.
-//  Copyright © 2019 Loc Nguyen. All rights reserved.
-//
-
 import Foundation
 import GoogleAPIClientForREST
 

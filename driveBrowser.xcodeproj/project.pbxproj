@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54469950381D44991C9F5A2E /* Pods_driveBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78269C3A55B0A8AD37841A78 /* Pods_driveBrowser.framework */; };
 		D22024FF2636DDA300661DE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22024FE2636DDA300661DE3 /* AppDelegate.swift */; };
 		D22025012636DDA300661DE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22025002636DDA300661DE3 /* SceneDelegate.swift */; };
-		D22025032636DDA300661DE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22025022636DDA300661DE3 /* ViewController.swift */; };
+		D22025032636DDA300661DE3 /* DriveBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22025022636DDA300661DE3 /* DriveBrowserViewController.swift */; };
 		D22025062636DDA300661DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22025042636DDA300661DE3 /* Main.storyboard */; };
 		D22025082636DDA600661DE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22025072636DDA600661DE3 /* Assets.xcassets */; };
 		D220250B2636DDA600661DE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22025092636DDA600661DE3 /* LaunchScreen.storyboard */; };
+		D22025292636E21000661DE3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22025272636E21000661DE3 /* Utils.swift */; };
+		D220252A2636E21000661DE3 /* DriveApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22025282636E21000661DE3 /* DriveApi.swift */; };
+		D220254B26371C5000661DE3 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D220254A26371C5000661DE3 /* FirstPageViewController.swift */; };
+		D2202554263729D500661DE3 /* ObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2202553263729D500661DE3 /* ObserverViewController.swift */; };
+		D220255726372D4800661DE3 /* ObserverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D220255626372D4800661DE3 /* ObserverView.swift */; };
+		D26210D326373C1C007414DB /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26210D226373C1C007414DB /* FileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78269C3A55B0A8AD37841A78 /* Pods_driveBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_driveBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D106939725B7E49DF612D6A /* Pods-driveBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driveBrowser.release.xcconfig"; path = "Target Support Files/Pods-driveBrowser/Pods-driveBrowser.release.xcconfig"; sourceTree = "<group>"; };
+		A7C55E79FD8A31FD08DDF0E3 /* Pods-driveBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driveBrowser.debug.xcconfig"; path = "Target Support Files/Pods-driveBrowser/Pods-driveBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		D22024FB2636DDA300661DE3 /* driveBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = driveBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22024FE2636DDA300661DE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D22025002636DDA300661DE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D22025022636DDA300661DE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D22025022636DDA300661DE3 /* DriveBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveBrowserViewController.swift; sourceTree = "<group>"; };
 		D22025052636DDA300661DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22025072636DDA600661DE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D220250A2636DDA600661DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D220250C2636DDA600661DE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D22025272636E21000661DE3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D22025282636E21000661DE3 /* DriveApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveApi.swift; sourceTree = "<group>"; };
+		D220254A26371C5000661DE3 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		D2202553263729D500661DE3 /* ObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverViewController.swift; sourceTree = "<group>"; };
+		D220255626372D4800661DE3 /* ObserverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverView.swift; sourceTree = "<group>"; };
+		D26210D226373C1C007414DB /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54469950381D44991C9F5A2E /* Pods_driveBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C8FDD85907EB8D6F7386C87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78269C3A55B0A8AD37841A78 /* Pods_driveBrowser.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D4B8F5D70147312034AE472 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7C55E79FD8A31FD08DDF0E3 /* Pods-driveBrowser.debug.xcconfig */,
+				7D106939725B7E49DF612D6A /* Pods-driveBrowser.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D22024F22636DDA300661DE3 = {
 			isa = PBXGroup;
 			children = (
 				D22024FD2636DDA300661DE3 /* driveBrowser */,
 				D22024FC2636DDA300661DE3 /* Products */,
+				3D4B8F5D70147312034AE472 /* Pods */,
+				2C8FDD85907EB8D6F7386C87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,37 @@
 		D22024FD2636DDA300661DE3 /* driveBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				D22024FE2636DDA300661DE3 /* AppDelegate.swift */,
-				D22025002636DDA300661DE3 /* SceneDelegate.swift */,
-				D22025022636DDA300661DE3 /* ViewController.swift */,
+				D22025202636E20200661DE3 /* Views */,
+				D220254A26371C5000661DE3 /* FirstPageViewController.swift */,
+				D22025022636DDA300661DE3 /* DriveBrowserViewController.swift */,
+				D2202553263729D500661DE3 /* ObserverViewController.swift */,
 				D22025042636DDA300661DE3 /* Main.storyboard */,
-				D22025072636DDA600661DE3 /* Assets.xcassets */,
-				D22025092636DDA600661DE3 /* LaunchScreen.storyboard */,
+				D220251D2636DF6400661DE3 /* Support files */,
 				D220250C2636DDA600661DE3 /* Info.plist */,
 			);
 			path = driveBrowser;
+			sourceTree = "<group>";
+		};
+		D220251D2636DF6400661DE3 /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				D22025272636E21000661DE3 /* Utils.swift */,
+				D22025282636E21000661DE3 /* DriveApi.swift */,
+				D22024FE2636DDA300661DE3 /* AppDelegate.swift */,
+				D22025002636DDA300661DE3 /* SceneDelegate.swift */,
+				D22025072636DDA600661DE3 /* Assets.xcassets */,
+				D22025092636DDA600661DE3 /* LaunchScreen.storyboard */,
+			);
+			path = "Support files";
+			sourceTree = "<group>";
+		};
+		D22025202636E20200661DE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D220255626372D4800661DE3 /* ObserverView.swift */,
+				D26210D226373C1C007414DB /* FileCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D220250F2636DDA600661DE3 /* Build configuration list for PBXNativeTarget "driveBrowser" */;
 			buildPhases = (
+				5704FF0191FDCAFE31548818 /* [CP] Check Pods Manifest.lock */,
 				D22024F72636DDA300661DE3 /* Sources */,
 				D22024F82636DDA300661DE3 /* Frameworks */,
 				D22024F92636DDA300661DE3 /* Resources */,
+				47A3AF1D26EF4D0484888A89 /* [CP] Embed Pods Frameworks */,
+				BC890A351B6DF8738EB50307 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,14 +193,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47A3AF1D26EF4D0484888A89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveBrowser/Pods-driveBrowser-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveBrowser/Pods-driveBrowser-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-driveBrowser/Pods-driveBrowser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5704FF0191FDCAFE31548818 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-driveBrowser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC890A351B6DF8738EB50307 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveBrowser/Pods-driveBrowser-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveBrowser/Pods-driveBrowser-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-driveBrowser/Pods-driveBrowser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D22024F72636DDA300661DE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22025032636DDA300661DE3 /* ViewController.swift in Sources */,
+				D22025032636DDA300661DE3 /* DriveBrowserViewController.swift in Sources */,
 				D22024FF2636DDA300661DE3 /* AppDelegate.swift in Sources */,
+				D220255726372D4800661DE3 /* ObserverView.swift in Sources */,
 				D22025012636DDA300661DE3 /* SceneDelegate.swift in Sources */,
+				D220254B26371C5000661DE3 /* FirstPageViewController.swift in Sources */,
+				D2202554263729D500661DE3 /* ObserverViewController.swift in Sources */,
+				D22025292636E21000661DE3 /* Utils.swift in Sources */,
+				D26210D326373C1C007414DB /* FileCell.swift in Sources */,
+				D220252A2636E21000661DE3 /* DriveApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +409,7 @@
 		};
 		D22025102636DDA600661DE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7C55E79FD8A31FD08DDF0E3 /* Pods-driveBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +429,7 @@
 		};
 		D22025112636DDA600661DE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D106939725B7E49DF612D6A /* Pods-driveBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

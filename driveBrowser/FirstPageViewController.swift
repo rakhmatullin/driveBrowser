@@ -9,9 +9,14 @@ import UIKit
 import GoogleSignIn
 import GoogleAPIClientForREST
 
+protocol FirstPageViewControllerDelegate {
+    func pickedFile(file: GTLRDrive_File)
+}
+
 class FirstPageViewController: UIViewController {
     @IBOutlet var mainButton: UIButton!
-    @IBOutlet var fileInfoLabel: UILabel!
+    @IBOutlet var iconImageView: UIImageView!
+    @IBOutlet var infoTextView: UITextView!
     
     var service = GTLRDriveService()
     var email: String = ""
@@ -21,7 +26,7 @@ class FirstPageViewController: UIViewController {
             if !isAuthorized {
                 mainButton.setTitle("Войти", for: .normal)
             } else {
-                mainButton.setTitle("Показать список файлов", for: .normal)
+                mainButton.setTitle("Выбрать", for: .normal)
             }
         }
     }
@@ -39,13 +44,18 @@ class FirstPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Google Drive"
+        
         isAuthorized = false
-        setupInfoLabel(with: "")
+        setupInfoView()
     }
     
-    private func setupInfoLabel(with text: String) {
-        fileInfoLabel.numberOfLines = 0
-        fileInfoLabel.text = text
+    private func setupInfoView() {
+        infoTextView.contentInsetAdjustmentBehavior = .automatic
+        infoTextView.textAlignment = .center
+        infoTextView.textColor = .black
+        infoTextView.isSelectable = true
+        infoTextView.isEditable = false
     }
     
     private func setupGoogleSignIn() {
@@ -69,15 +79,11 @@ extension FirstPageViewController: GIDSignInDelegate {
             isAuthorized = true
             email = user.profile.email
             service.authorizer = user.authentication.fetcherAuthorizer()
-            
-            debugPrint(user.profile.name ?? "")
-            debugPrint(user.profile.email ?? "")
         }
     }
     
     func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)
-        print("Dismiss GoogleSignIn")
     }
     
     func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
@@ -102,8 +108,28 @@ extension FirstPageViewController: FirstPageViewControllerDelegate {
                 fileSize = String.localizedStringWithFormat("%.1fKB", Double(size / 1024))
             }
         }
-        fileInfoLabel.text = data.name! + "\n" + fileSize
-        fileInfoLabel.sizeToFit()
+        var labelText = ""
+        if let name = data.name {
+            labelText = name + "\n"
+        }
+        if fileSize != "" {
+            labelText += fileSize + "\n"
+        }
+        if let date = data.modifiedTime?.date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            labelText += "\(formatter.string(from: date))" + "\n"
+        }
+        if let link = data.webViewLink, link != "" {
+            labelText += link
+        }
+        
+        infoTextView.text = labelText
+        //infoTextView.sizeToFit()
+        
+        iconImageView.sd_setImage(with: URL(string: data.thumbnailLink ?? ""),
+                                  placeholderImage: UIImage(named: data.isFolder() ? "folderIcon" : "fileIcon"))
+        
     }
     
 }
